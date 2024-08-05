@@ -18,10 +18,6 @@
       gap: 3px;
       display: flex;
   }
-  #button-bar button:disabled {
-    background-color: grey;
-    border-color: grey;
-  }
 
   #left-side {
       margin-right: 20px
@@ -35,21 +31,14 @@
       display: none;
       position: absolute;
       width: 60px;
-      background-color: white;
-      box-shadow: 0 0 5px grey;
       border-radius: 3px;
   }
 
   #menu button {
       width: 100%;
-      background-color: white;
       border: none;
       margin: 0;
       padding: 10px;
-  }
-
-  #menu button:hover {
-      background-color: lightgray;
   }
 
   .ui-autocomplete {
@@ -80,8 +69,6 @@
       /* full screen */
       width: 100vw;
       height: 100vh;
-      /* transparent black */
-      background: rgba(0, 0, 0, 0.7);
       /* middle layer, i.e. appears below the sidebar */
       z-index: 998;
       opacity: 0;
@@ -112,7 +99,6 @@
 
   body {
       font-family: 'Poppins', sans-serif;
-      background: #fafafa;
   }
 
   /* p {
@@ -133,11 +119,9 @@
 
   .navbar {
       padding: 15px 10px;
-      background: #fff;
       border: none;
       border-radius: 0;
       margin-bottom: 40px;
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   }
 
   .navbar-btn {
@@ -149,7 +133,6 @@
   .line {
       width: 100%;
       height: 1px;
-      border-bottom: 1px dashed #ddd;
       margin: 40px 0;
   }
 
@@ -164,11 +147,7 @@
       left: -250px;
       height: 100vh;
       z-index: 999;
-      background: #7386D5;
-      color: #fff;
       transition: all 0.3s;
-      /* overflow-y: scroll; */
-      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   }
 
   #sidebar.active {
@@ -180,7 +159,6 @@
       height: 35px;
       line-height: 35px;
       text-align: center;
-      background: #7386D5;
       position: absolute;
       top: 10px;
       right: 10px;
@@ -190,17 +168,11 @@
       transition: all 0.3s;
   }
 
-  #dismiss:hover {
-      background: #fff;
-      color: #7386D5;
-  }
-
   .overlay {
       display: none;
       position: fixed;
       width: 100vw;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.7);
       z-index: 998;
       opacity: 0;
       transition: all 0.5s ease-in-out;
@@ -213,7 +185,6 @@
 
   #sidebar .sidebar-header {
       padding: 20px;
-      background: #6d7fcc;
   }
 
   #sidebar ul.components {
@@ -222,7 +193,6 @@
   }
 
   #sidebar ul p {
-      color: #fff;
       padding: 10px;
   }
 
@@ -244,17 +214,6 @@
       display: block;
   }
 
-  #sidebar ul li a:hover {
-      color: #7386D5;
-      background: #fff;
-  }
-
-  #sidebar ul li.active>a,
-  a[aria-expanded="true"] {
-      color: #fff;
-      background: #6d7fcc;
-  }
-
   a[data-toggle="collapse"] {
       position: relative;
   }
@@ -270,7 +229,6 @@
   ul ul a {
       font-size: 0.9em !important;
       padding-left: 30px !important;
-      background: #6d7fcc;
   }
 
   ul.CTAs {
@@ -283,17 +241,6 @@
       display: block;
       border-radius: 5px;
       margin-bottom: 5px;
-  }
-
-  a.download {
-      background: #fff;
-      color: #7386D5;
-  }
-
-  a.article,
-  a.article:hover {
-      background: #6d7fcc !important;
-      color: #fff !important;
   }
 
   /* ---------------------------------------------------
@@ -324,7 +271,6 @@
       /* width: 100%; */
       height: 15px;
       border-radius: 5px;
-      background: #d3d3d3;
       outline: none;
       opacity: 0.7;
       -webkit-transition: .2s;
@@ -344,7 +290,6 @@
       width: 25px;
       height: 25px;
       border-radius: 50%;
-      background: #04AA6D;
       cursor: pointer;
   }
 
@@ -353,7 +298,6 @@
       width: 25px;
       height: 25px;
       border-radius: 50%;
-      background: #04AA6D;
       cursor: pointer;
   }
 
@@ -374,16 +318,6 @@
       background: auto;
   }
 
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-      background: #555;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-      background: #555;
-  }
-
   /* ---------------------------------------------------
         No Scrolling on Mobile STYLE
     ----------------------------------------------------- */
@@ -394,9 +328,230 @@
       body {
           overflow-x: hidden;
           overflow-y: hidden;
-      }
+      }:root {
+        --text-color: #333; /* Dark gray for primary text */
+        --area-background-color: #f5f5f5; /* Very light gray for background */
+        --area-stroke-color: #ccc; /* Light gray for strokes */
+        --encumbrance-green: #4CAF50; /* Bright green */
+        --encumbrance-yellow: #FFC107; /* Bright yellow */
+        --encumbrance-red: #F44336; /* Bright red */
+    }
+    
 
       body {
           position: relative;
       }
   }
+
+  /* ---------------------------------------------------
+        Light mode
+    ----------------------------------------------------- */
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* spawn area color scheme */
+        --text-color: #333; /* Dark gray for primary text */
+        --area-background-color: #f5f5f5; /* Very light gray for background */
+        --area-stroke-color: #ccc; /* Light gray for strokes */
+        /* grid color scheme */
+        --encumbrance-green: #4CAF50; /* Bright green */
+        --encumbrance-yellow: #FFC107; /* Bright yellow */
+        --encumbrance-red: #F44336; /* Bright red */
+    }
+    #button-bar button:disabled {
+        background-color: grey;
+        border-color: grey;
+    }
+    #menu {
+        background-color: white;
+        box-shadow: 0 0 5px grey;
+    }
+    #menu button {
+        background-color: white;
+    }
+    #menu button:hover {
+        background-color: lightgray;
+    }
+    .overlay {
+        /* transparent black */
+        background: rgba(0, 0, 0, 0.7);
+    }
+    body {
+        background: #fafafa;
+    }
+    .navbar {
+        background-color: #fff;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    .line {
+        border-bottom: 1px dashed #ddd;
+    }
+    #sidebar {
+        background: #7386D5;
+        color: #fff;
+        /* overflow-y: scroll; */
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    }
+    #sidebar .sidebar-header {
+        background: #6d7fcc;
+    }
+    #dismiss {
+        background: #7386D5;
+    }
+    #dismiss:hover {
+        background: #fff;
+        color: #7386D5;
+    }
+    #sidebar ul p {
+        color: #fff;
+    }
+    #sidebar ul li a:hover {
+        color: #7386D5;
+        background: #fff;
+    }
+    #sidebar ul li.active>a,
+    a[aria-expanded="true"] {
+        color: #fff;
+        background: #6d7fcc;
+    }
+    ul ul a {
+        background: #6d7fcc;
+    }
+    a.download {
+        background: #fff;
+        color: #7386D5;
+    }
+    a.article,
+    a.article:hover {
+        background: #6d7fcc !important;
+        color: #fff !important;
+    }
+    /* The slider itself */
+    .slider {
+        background: #d3d3d3;
+    }
+        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    .slider::-webkit-slider-thumb {
+        background: #04AA6D;
+    }
+    .slider::-moz-range-thumb {
+        background: #04AA6D;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #555;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+}
+
+  /* ---------------------------------------------------
+        Dark mode
+    ----------------------------------------------------- */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* spawn area color scheme */
+        --text-color: #eee; /* A darker gray for text */
+        --area-background-color: #121212; /* Very dark gray for background */
+        --area-stroke-color: #1e1e1e; /* Dark gray for strokes */
+        /* grid color scheme */
+        --encumbrance-green: #2e6f5e; /* Dark muted green */
+        --encumbrance-yellow: #9b7e00; /* Dark muted yellow */
+        --encumbrance-red: #823131; /* Dark muted red */
+    }
+    #button-bar button:disabled {
+        background-color: #444;
+        border-color: #444;
+    }
+    #menu {
+        background-color: #333;
+        box-shadow: 0 0 5px #111;
+    }
+    #menu button {
+        background-color: #333;
+    }
+    #menu button:hover {
+        background-color: #555;
+    }
+    .overlay {
+        /* transparent black */
+        background: rgba(0, 0, 0, 0.9);
+    }
+    body {
+        background: #1a1a1a;
+    }
+    .container{
+        background: #1e1e1e;
+        color: #ddd;
+    }
+    .navbar {
+        background-color: #1e1e1e;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    .line {
+        border-bottom: 1px dashed #555;
+    }
+    #sidebar {
+        background: #2b2b2b;
+        color: #ddd;
+        /* overflow-y: scroll; */
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+    }
+    #sidebar .sidebar-header {
+        background: #3a3a3a;
+    }
+    #dismiss {
+        background: #2b2b2b;
+    }
+    #dismiss:hover {
+        background: #fff;
+        color: #2b2b2b;
+    }
+    #sidebar ul p {
+        color: #ddd;
+    }
+    #sidebar ul li a:hover {
+        color: #2b2b2b;
+        background: #ddd;
+    }
+    #sidebar ul li.active>a,
+    a[aria-expanded="true"] {
+        color: #ddd;
+        background: #3a3a3a;
+    }
+    ul ul a {
+        background: #3a3a3a;
+    }
+    a.download {
+        background: #333;
+        color: #ddd;
+    }
+    a.article,
+    a.article:hover {
+        background: #3a3a3a !important;
+        color: #ddd !important;
+    }
+    /* The slider itself */
+    .slider {
+        background: #444;
+    }
+        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    .slider::-webkit-slider-thumb {
+        background: #04AA6D;
+    }
+    .slider::-moz-range-thumb {
+        background: #04AA6D;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa;
+    }
+}

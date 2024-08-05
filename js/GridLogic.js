@@ -1,5 +1,13 @@
 function createGridLayer(strength, useEncumbrance) {
 
+  // get color values from CSS
+  let textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-color'); 
+  let areaBackgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--area-background-color');
+  let areaStrokeColor = getComputedStyle(document.documentElement).getPropertyValue('--area-stroke-color');
+  let encumbranceGreen = getComputedStyle(document.documentElement).getPropertyValue('--encumbrance-green');
+  let encumbranceYellow = getComputedStyle(document.documentElement).getPropertyValue('--encumbrance-yellow');
+  let encumbranceRed = getComputedStyle(document.documentElement).getPropertyValue('--encumbrance-red');
+
   var strengthCount = strength;
 
   gridLayer = new Konva.Layer({
@@ -15,12 +23,11 @@ function createGridLayer(strength, useEncumbrance) {
     fontSize: GRID_SIZE / 1.5,
     fontFamily: 'Calibri',
     fontStyle: 'bold',
-    fill: '#000',
+    fill: textColor,
     align: 'center'
   }));
 
   if (useEncumbrance) {
-
     gridLayer.add(new Konva.Text({
       x: GRID_PADDING,
       y: 0, 
@@ -28,7 +35,7 @@ function createGridLayer(strength, useEncumbrance) {
       fontSize: GRID_SIZE / 2,
       fontFamily: 'Calibri',
       fontStyle: 'bold',
-      fill: '#000',
+      fill: textColor,
       width: GRID_SIZE * 5,
       align: 'center'
     }));
@@ -40,7 +47,7 @@ function createGridLayer(strength, useEncumbrance) {
       fontSize: GRID_SIZE / 2,
       fontFamily: 'Calibri',
       fontStyle: 'bold',
-      fill: '#000',
+      fill: textColor,
       width: GRID_SIZE * 5,
       //padding: 5,
       align: 'center',
@@ -54,7 +61,7 @@ function createGridLayer(strength, useEncumbrance) {
       fontSize: GRID_SIZE / 4,
       fontFamily: 'Calibri',
       //fontStyle: 'bold',
-      fill: '#000',
+      fill: textColor,
       width: GRID_SIZE * 5,
       //padding: 5,
       align: 'center',
@@ -67,7 +74,7 @@ function createGridLayer(strength, useEncumbrance) {
       fontSize: GRID_SIZE / 2,
       fontFamily: 'Calibri',
       fontStyle: 'bold',
-      fill: '#000',
+      fill: textColor,
       width: GRID_SIZE * 5,
       //padding: 5,
       align: 'center',
@@ -81,7 +88,7 @@ function createGridLayer(strength, useEncumbrance) {
       fontSize: GRID_SIZE / 5,
       fontFamily: 'Calibri',
       //fontStyle: 'bold',
-      fill: '#000',
+      fill: textColor,
       width: GRID_SIZE * 5,
       //padding: 5,
       align: 'center',
@@ -97,7 +104,7 @@ function createGridLayer(strength, useEncumbrance) {
       text: strengthCount--,
       fontSize: GRID_SIZE / 2,
       fontFamily: 'Calibri',
-      fill: '#000',
+      fill: textColor,
       align: 'center'
     }));
   }
@@ -108,14 +115,14 @@ function createGridLayer(strength, useEncumbrance) {
       var gridColour = ''
       if (useEncumbrance) {
         if (x < 5)
-          gridColour = '#B9FF9F'//green
+          gridColour = encumbranceGreen//green
         else if (x >= 5 && x < 10)
-          gridColour = '#EBB60A'//yellowy orange
+          gridColour = encumbranceYellow//yellowy orange
         else if (x >= 10)
-          gridColour = '#B70000'//red
+          gridColour = encumbranceRed//red
       }
       else
-        gridColour = '#B9FF9F'//green
+        gridColour = encumbranceGreen//green
 
       var rect = new Konva.Rect({
         x: (x * GRID_SIZE) + GRID_PADDING,
@@ -123,7 +130,7 @@ function createGridLayer(strength, useEncumbrance) {
         width: GRID_SIZE,
         height: GRID_SIZE,
         fill: gridColour,
-        stroke: 'grey',
+        stroke: 'white',
         strokeWidth: 2,
       });
       gridLayer.add(rect)
@@ -136,8 +143,8 @@ function createGridLayer(strength, useEncumbrance) {
     y: (GRID_SIZE * strength) + GRID_PADDING + 20,
     width:  GRID_SIZE * 15,
     height: GRID_SIZE * 2,
-    fill: 'white',
-    stroke: 'black',
+    fill: areaBackgroundColor,
+    stroke: areaStrokeColor,
     strokeWidth: 1,
     cornerRadius: 10,
   }));
@@ -149,11 +156,11 @@ function createGridLayer(strength, useEncumbrance) {
     text: "Items Spawn Here",
     fontSize: GRID_SIZE / 1.5,
     fontFamily: 'Calibri',
-    fill: '#000',
+    fill: textColor,
     width: GRID_SIZE * 15,
     //padding: 5,
     align: 'center',
-    opacity: 0.10
+    opacity: 0.3
   }));
   
 
